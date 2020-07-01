@@ -4,7 +4,7 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
-const router = require("./routes");
+const router = require("./src/routes");
 
 const app = express();
 
