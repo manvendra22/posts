@@ -1,0 +1,27 @@
+.post {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 50px;
+    color: #333333;
+    margin: 50px 0 0 50px;
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.content {
+    font-size: 20px;
+    color: #888888;
+}
+
+.initial {
+    font-size: 300px;
+    color: #EDEDED;
+    position: absolute;
+    z-index: -1;
+    left: -15%;
+}

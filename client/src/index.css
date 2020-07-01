@@ -1,0 +1,17 @@
+* {
+  -khtml-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'ReemKufi-Regular';
+  src: url(./fonts/ReemKufi-Regular.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'ReemKufi-Regular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
