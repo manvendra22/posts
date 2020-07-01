@@ -1,10 +1,10 @@
-# Image Text Reader
+# Posts
 
 > Posts
 
 ### Live Link
 
-https://posts.herokuapp.com/
+https://posts--app.herokuapp.com/
 
 ![Screenshot](posts.png)
 
