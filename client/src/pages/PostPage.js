@@ -1,33 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useQuery } from 'react-query'
 import { useParams } from "react-router";
 
 import Post from '../components/Post/Post'
 import Comment from '../components/Comment/Comment'
 
 export default function PostPage() {
-    const [data, setData] = useState({})
-    const [loader, setLoader] = useState(true)
-
     let { id } = useParams();
+    const { isLoading, error, data } = useQuery('post', () =>
+        fetch(`/api/posts?id=${id}`).then(res =>
+            res.json()
+        )
+    )
 
-    useEffect(function () {
-        fetchPostData(id)
-    }, [id])
-
-    async function fetchPostData(id) {
-        setLoader(true)
-        try {
-            const response = await axios.get(`/api/posts?id=${id}`)
-            setData(response.data)
-        } catch (err) {
-            console.error(err)
-        } finally {
-            setLoader(false)
-        }
-    }
-
-    if (loader)
+    if (isLoading)
         return <div className="loader">Loading <i className="fa fa-spinner fa-spin"></i></div>
 
     return (

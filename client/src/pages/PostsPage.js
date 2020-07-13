@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query'
+import { useHistory } from "react-router";
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
 
 import Post from '../components/Post/Post'
 
 export default function PostsPage(props) {
-    const [data, setData] = useState([])
-    const [loader, setLoader] = useState(true)
+    const { isLoading, error, data } = useQuery('posts', () =>
+        fetch('/api/posts').then(res =>
+            res.json()
+        )
+    )
 
     const history = useHistory()
 
-    useEffect(function () {
-        fetchPostsData()
-    }, [])
-
-    async function fetchPostsData() {
-        setLoader(true)
-        try {
-            const response = await axios.get('/api/posts')
-            setData(response.data)
-        } catch (err) {
-            console.error(err)
-        } finally {
-            setLoader(false)
-        }
-    }
-
-    if (loader)
+    if (isLoading)
         return <div className="loader">Loading <i className="fa fa-spinner fa-spin"></i></div>
-
 
     return (
         <>
