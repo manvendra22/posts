@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query'
 import { useHistory } from "react-router";
-import axios from 'axios';
 
 import Post from '../components/Post/Post'
 
