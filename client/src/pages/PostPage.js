@@ -7,7 +7,7 @@ import Comment from '../components/Comment/Comment'
 
 export default function PostPage() {
     let { id } = useParams();
-    const { isLoading, error, data } = useQuery('post', () =>
+    const { isLoading, error, data } = useQuery(['post', id], () =>
         fetch(`/api/posts?id=${id}`).then(res =>
             res.json()
         )

@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import Post from '../components/Post/Post'
 
 export default function PostsPage(props) {
-    const { isLoading, error, data } = useQuery('posts', () =>
+    const { isLoading, error, data } = useQuery('post', () =>
         fetch('/api/posts').then(res =>
             res.json()
         )

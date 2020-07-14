@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { ReactQueryDevtools } from 'react-query-devtools'
 
 import './App.css';
 import './Common.css'
@@ -24,6 +25,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <ReactQueryDevtools initialIsOpen={false} />
     </div>
   );
 }
