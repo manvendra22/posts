@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "client": "npm start --prefix client",
-    "oneshot": "concurrently \"npm run start\" \"npm run client\"",
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "engines": {
