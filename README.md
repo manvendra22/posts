@@ -1,6 +1,6 @@
 # Posts
 
-> Posts
+> Posts App
 
 ### Live Link
 
